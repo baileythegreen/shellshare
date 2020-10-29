@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+
+# This is a modified version of the original shellshare script.
+# This script was modified by Bailey Harrington.
+
 from __future__ import print_function
 
 import argparse
