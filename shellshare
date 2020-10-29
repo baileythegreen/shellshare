@@ -143,8 +143,8 @@ def parse_args():
     parser.add_argument('-p', '--password', dest='password',
                         help='room\'s broadcasting password (default: network card\'s MAC address)',
                         default=uuid.getnode())
-    parser.add_argument('-n', '--name', dest='name',
-                        help='name of user')
+    parser.add_argument('-n', '--name', dest='name', # added by Bailey
+                        help='name of user')         # added by Bailey
     args = parser.parse_args()
 
     if not urlparse(args.server).scheme:
@@ -169,7 +169,7 @@ if (size['rows'] > 30 or size['cols'] > 160):
     print('You can resize it anytime.')
 
 print('Sharing terminal in %s/%s' % (args.server, room))
-os.system('echo $USER: %s/%s > ./%s.shellshare' % (args.server, room, args.name))
+os.system('echo $USER: %s/%s > ./%s.shellshare' % (args.server, room, args.name)) # added by Bailey
 thread.start_new_thread(stream_file,
                         (tmp.name, args.server, room, args.password))
 subprocess.call('script %s %s' % (shell_args, tmp.name), shell=True)
